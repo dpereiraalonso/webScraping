@@ -69,7 +69,11 @@ supermarket_list = pd.DataFrame(
 '''
 
 prices_list = [item for item in prices_list if len(item)>0]
-print(len(products_list))
-print(len(prices_list))
-print(products_list)
-print(prices_list)
+products_list = [item for item in products_list if len(item)>0]
+prices_list.pop(0)
+#products_list = list(set(products_list))
+supermarket_list = pd.DataFrame(
+    {'products': products_list,
+     'prices': prices_list
+    })
+print(supermarket_list)
